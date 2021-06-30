@@ -7,12 +7,12 @@ import {
   createMuiTheme,
 } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import '@fontsource/roboto';
+import "@fontsource/poppins"; 
 
 let theme =createMuiTheme({
 typography: {
   useNextVariants: true,
-  fontFamily: "Roboto",
+  fontFamily: "Poppins",
   h1: {
     color: "black",
     fontSize: "4rem",
@@ -25,7 +25,7 @@ typography: {
 overrides: {
   MuiCssBaseline: {
     "@global": {
-      "@font-face": "Roboto",
+      "@font-face": "Poppins",
     },
   } 
 },
@@ -34,11 +34,16 @@ palette: {
   primary: {
     main: "#34313D",
     deepBlue: "#3A3054",
-    seaBlue: "#4B3F6B",
+    purple: "#4B3F6B",
     grey: "#9E9AA8",
     turquoise: "#2BD0D0",
-    whiteish: "#EFF1F7",
   },
+  secondary: {
+    main: "#34313D",
+    whiteish: "#EFF1F7",
+    clearBlue: "#9AE3E3",
+    
+  }
 },
 
 })
