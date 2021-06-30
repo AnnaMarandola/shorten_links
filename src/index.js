@@ -35,13 +35,13 @@ typography: {
   },
 },
 
-// overrides: {
-//   MuiCssBaseline: {
-//     "@global": {
-//       "@font-face": "Poppins",
-//     },
-//   } 
-// },
+overrides: {
+  MuiCssBaseline: {
+    "@global": {
+      "@font-face": "Poppins",
+    },
+  } 
+},
 
 palette: {
   primary: {

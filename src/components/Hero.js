@@ -13,6 +13,7 @@ const styles = (theme) => ({
     [theme.breakpoints.up("md")]: {
       flexDirection: "row",
       height: "927px",
+      marginTop: "2rem",
     },
   },
   textContainer: {
@@ -23,6 +24,7 @@ const styles = (theme) => ({
       width: "50%",
       marginLeft: "15%",
       textAlign: "left",
+      marginTop: "4rem",
     },
   },
   title: {
@@ -31,6 +33,10 @@ const styles = (theme) => ({
   },
   subtitle: {
     marginBottom: "2rem",
+    [theme.breakpoints.up("md")]: {
+        width: "65%"
+    },
+
   },
   imageContainer: {
     overflowRight: "hidden",
@@ -41,14 +47,17 @@ const styles = (theme) => ({
     marginLeft: "3rem",
     overflowRight: "hidden",
     marginBottom: "2rem",
-    [theme.breakpoints.up("md")]: {
-      width: "90%",
-      marginLeft: "15rem",
-      marginTop: "2rem",
+    [theme.breakpoints.up("sm")]: {
+      width: "100%",
+      marginLeft: "9rem",
     },
   },
   getStartedBtn: {
     width: "60%",
+    [theme.breakpoints.up("sm")]: {
+        width: "10rem"
+      },
+  
   },
 });
 
