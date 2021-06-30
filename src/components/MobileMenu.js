@@ -15,9 +15,6 @@ const styles = (theme) => ({
       boxSizing: "none",
     },
   },
-  menuItem: {
-    // textAlign: "center",
-  },
   separator: {
     border: "1px solid #4B3F6B",
     margin: "1rem",

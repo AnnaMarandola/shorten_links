@@ -14,21 +14,34 @@ typography: {
   useNextVariants: true,
   fontFamily: "Poppins",
   h1: {
-    color: "black",
-    fontSize: "4rem",
+    color: "#34313D",
+    fontSize: "80px",
+    fontWeight: 700,
+    lineHeight: "90px",
     '@media (max-width:600px)': {
-      fontSize: "3rem",
+      fontSize: "42px",
+      lineHeight: "48px",
     },
-  }
+  },
+  h5: {
+    color: "#9E9AA8",
+    fontSize: "22px",
+    fontWeight: 500,
+    lineHeight: "36px",
+    '@media (max-width:600px)': {
+      fontSize: "18px",
+      lineHeight: "30px",
+    },
+  },
 },
 
-overrides: {
-  MuiCssBaseline: {
-    "@global": {
-      "@font-face": "Poppins",
-    },
-  } 
-},
+// overrides: {
+//   MuiCssBaseline: {
+//     "@global": {
+//       "@font-face": "Poppins",
+//     },
+//   } 
+// },
 
 palette: {
   primary: {
