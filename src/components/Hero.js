@@ -9,11 +9,11 @@ const styles = (theme) => ({
     flexDirection: "column-reverse",
     backgroundColor: "white",
     overflow: "hidden",
-    paddingBottom: "5rem",
+    paddingBottom: "10rem",
     [theme.breakpoints.up("md")]: {
       flexDirection: "row",
-      height: "927px",
-      marginTop: "2rem",
+      paddingTop: "2rem",
+      paddingBottom: "8rem"
     },
   },
   textContainer: {
@@ -21,10 +21,10 @@ const styles = (theme) => ({
     width: "90%",
     marginLeft: "5%",
     [theme.breakpoints.up("md")]: {
-      width: "50%",
+      width: "40%",
       marginLeft: "15%",
       textAlign: "left",
-      marginTop: "4rem",
+      marginTop: "5rem",
     },
   },
   title: {
@@ -36,7 +36,6 @@ const styles = (theme) => ({
     [theme.breakpoints.up("md")]: {
         width: "65%"
     },
-
   },
   imageContainer: {
     overflowRight: "hidden",
@@ -48,8 +47,8 @@ const styles = (theme) => ({
     overflowRight: "hidden",
     marginBottom: "2rem",
     [theme.breakpoints.up("sm")]: {
-      width: "100%",
-      marginLeft: "9rem",
+      width: "110%",
+      marginLeft: "7rem",
     },
   },
   getStartedBtn: {
@@ -57,11 +56,10 @@ const styles = (theme) => ({
     [theme.breakpoints.up("sm")]: {
         width: "10rem"
       },
-  
   },
 });
 
-const Header = ({ classes }) => {
+const Hero = ({ classes }) => {
   return (
     <div className={classes.root}>
       <div className={classes.textContainer}>
@@ -81,4 +79,4 @@ const Header = ({ classes }) => {
   );
 };
 
-export default withStyles(styles)(Header);
+export default withStyles(styles)(Hero);

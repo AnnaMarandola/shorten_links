@@ -3,7 +3,7 @@ import { withStyles } from "@material-ui/core";
 
 export default withStyles((theme) => ({
   root: {
-    padding: "0.5em 1.5em",
+    padding: "0.7em 1.5em",
     borderRadius: "30px",
     fontSize: "1rem",
     border: "0px",
