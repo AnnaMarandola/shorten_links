@@ -24,24 +24,37 @@ const styles = (theme) => ({
       marginLeft: "33.5%",
     },
   },
+  container: {
+    [theme.breakpoints.up("md")]: {
+    },
+  },
   blueLine: {
     backgroundColor: theme.palette.primary.turquoise,
+    width: "5px",
+    height: "40rem",
+    position: "relative",
+    bottom: "-10rem",
+    left: "50%",
+    zIndex: 0,
     [theme.breakpoints.up("md")]: {
       width: "60%",
       marginLeft: "20%",
       height: "8px",
       position: "relative",
       bottom: "-10rem",
-      zIndex: 0,
+      left: 0,
     },
   },
   cardsContainer: {
     display: "flex",
     flexDirection: "column",
+    zIndex: 3,
+    marginTop: "-40rem",
     [theme.breakpoints.up("md")]: {
       flexDirection: "row",
       width: "69%",
       marginLeft: "15%",
+      marginTop: 0,
       justifyContent: "space-between",
       zIndex: 3,
       '& > :nth-child(2)': {
@@ -63,6 +76,8 @@ const styles = (theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    zIndex: 3,
+
     [theme.breakpoints.up("md")]: {
       width: "30%",
       marginLeft: 0,
