@@ -23,16 +23,39 @@ typography: {
       lineHeight: "48px",
     },
   },
+  h2: {
+    color: "#34313D",
+    fontSize: "40px",
+    fontWeight: 700,
+    lineHeight: "48px",
+    '@media (max-width:600px)': {
+      fontSize: "28px",
+      lineHeight: "48px",
+    },
+  },
+  h3: {
+    color: "#34313D",
+    fontSize: "22px",
+    fontWeight: 700,
+    lineHeight: "33px",
+  },
   h5: {
     color: "#9E9AA8",
     fontSize: "22px",
-    fontWeight: 500,
+    fontWeight: 700,
     lineHeight: "36px",
     '@media (max-width:600px)': {
       fontSize: "18px",
       lineHeight: "30px",
     },
   },
+  body1: {
+    color: "#9E9AA8",
+    fontSize: "15px",
+    fontWeight: 500,
+    lineHeight: "26px",
+  
+  }
 },
 
 overrides: {
