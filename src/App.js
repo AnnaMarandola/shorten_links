@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import SearchBar from "./components/SearchBar";
 import PromoSection from "./components/PromoSection";
+import BoostBanner from "./components/BoostBanner";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
     <Hero />
     <SearchBar />
     <PromoSection />
+    <BoostBanner />
     </div>
   );
 }
