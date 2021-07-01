@@ -53,9 +53,14 @@ typography: {
     color: "#9E9AA8",
     fontSize: "15px",
     fontWeight: 500,
-    lineHeight: "26px",
-  
-  }
+    lineHeight: "26px", 
+  },
+  body2: {
+    color: "#9E9AA8",
+    fontSize: "15px",
+    fontWeight: 700,
+    lineHeight: "26px", 
+  },
 },
 
 overrides: {
@@ -68,7 +73,7 @@ overrides: {
 
 palette: {
   primary: {
-    main: "#34313D",
+    main: "#232127",
     deepBlue: "#3A3054",
     purple: "#4B3F6B",
     grey: "#9E9AA8",
