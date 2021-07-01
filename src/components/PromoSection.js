@@ -10,12 +10,33 @@ const styles = (theme) => ({
   title: {
     textAlign: "center",
     marginBottom: "1.5rem",
+    [theme.breakpoints.up("md")]: {
+      paddingTop: "3rem"
+    }
   },
   subtitle: {
     textAlign: "center",
     width: "80%",
     marginLeft: "10%",
     marginBottom: "8rem",
+    [theme.breakpoints.up("md")]: {
+      width: "33%",
+      marginLeft: "33.5%",
+    }
+  },
+  cardsContainer: {
+    display: "flex",
+    flexDirection: "column",
+    [theme.breakpoints.up("md")]: {
+      flexDirection: "row",
+      width: "72%",
+      marginLeft: "15%",
+      justifyContent: "space-between",
+    },
+  },
+  blueLine: {
+    [theme.breakpoints.up("md")]: {
+    }
   },
   card: {
     width: "90%",
@@ -26,7 +47,18 @@ const styles = (theme) => ({
     borderRadius: "5px",
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    [theme.breakpoints.up("md")]: {
+      marginLeft: 0,
+      alignItems: "stretch",
+      textAlign: "left",
+    },
+  },
+  cardTitle: {
+    [theme.breakpoints.up("md")]: {
+      margin: "2rem",
+      marginBottom: 0,
+    }
   },
   circle: {
     width: "90px",
@@ -39,16 +71,24 @@ const styles = (theme) => ({
     alignItems: "center",
     position: "relative",
     marginTop: "-3rem",
-    marginBottom: "3rem"
+    marginBottom: "3rem",
+    [theme.breakpoints.up("md")]: {
+      marginLeft: "2rem",
+      marginBottom: "1rem",
+    },
   },
   icon: {
-      width: "50%",
-      height: "50%"
-
+    width: "50%",
+    height: "50%",
   },
   cardContent: {
     textAlign: "center",
-    padding: "1.5rem"
+    padding: "1.5rem",
+    [theme.breakpoints.up("md")]: {
+      textAlign: "left",
+      padding: "2rem",
+      paddingTop: "1rem"
+    }
   },
 });
 
@@ -81,21 +121,26 @@ const PromoSection = ({ classes }) => {
         statistics dashboard.
       </Typography>
       <div className={classes.cardsContainer}>
-      {cards.map((card, id) => (
-        <div key={id} >
-          <div className={classes.card}>
-          <div className={classes.circle}>
-            <img src={card.icon} alt={card.title} className={classes.icon} />
+      <div className={classes.blueLine}></div>
+        {cards.map((card, id) => (
+          <div key={id}>
+            <div className={classes.card}>
+              <div className={classes.circle}>
+                <img
+                  src={card.icon}
+                  alt={card.title}
+                  className={classes.icon}
+                />
+              </div>
+              <Typography variant="h3" className={classes.cardTitle}>
+                {card.title}
+              </Typography>
+              <Typography variant="body1" className={classes.cardContent}>
+                {card.text}
+              </Typography>
+            </div>
           </div>
-            <Typography variant="h3" className={classes.cardTitle}>
-              {card.title}
-            </Typography>
-            <Typography variant="body1" className={classes.cardContent}>
-              {card.text}
-            </Typography>
-          </div>
-        </div>
-      ))}
+        ))}
       </div>
     </div>
   );
