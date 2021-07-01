@@ -1,4 +1,4 @@
-import { withStyles, Typography, Card } from "@material-ui/core";
+import { withStyles, Typography } from "@material-ui/core";
 import BRAND from "../assets/icon-brand-recognition.svg";
 import RECORDS from "../assets/icon-detailed-records.svg";
 import CUSTOM from "../assets/icon-fully-customizable.svg";
@@ -11,8 +11,8 @@ const styles = (theme) => ({
     textAlign: "center",
     marginBottom: "1.5rem",
     [theme.breakpoints.up("md")]: {
-      paddingTop: "3rem"
-    }
+      paddingTop: "3rem",
+    },
   },
   subtitle: {
     textAlign: "center",
@@ -22,26 +22,41 @@ const styles = (theme) => ({
     [theme.breakpoints.up("md")]: {
       width: "33%",
       marginLeft: "33.5%",
-    }
+    },
+  },
+  blueLine: {
+    backgroundColor: theme.palette.primary.turquoise,
+    [theme.breakpoints.up("md")]: {
+      width: "60%",
+      marginLeft: "20%",
+      height: "8px",
+      position: "relative",
+      bottom: "-10rem",
+      zIndex: 0,
+    },
   },
   cardsContainer: {
     display: "flex",
     flexDirection: "column",
     [theme.breakpoints.up("md")]: {
       flexDirection: "row",
-      width: "72%",
+      width: "69%",
       marginLeft: "15%",
       justifyContent: "space-between",
+      zIndex: 3,
+      '& > :nth-child(2)': {
+        marginTop: "3rem",
+      },
+      '& > :nth-child(3)': {
+        marginTop: "6rem",
+      },
     },
-  },
-  blueLine: {
-    [theme.breakpoints.up("md")]: {
-    }
   },
   card: {
     width: "90%",
+    height: "fit-content",
     marginLeft: "5%",
-    marginBottom: "5rem",
+    marginBottom: "6rem",
     textAlign: "center",
     backgroundColor: "white",
     borderRadius: "5px",
@@ -49,16 +64,18 @@ const styles = (theme) => ({
     flexDirection: "column",
     alignItems: "center",
     [theme.breakpoints.up("md")]: {
+      width: "30%",
       marginLeft: 0,
       alignItems: "stretch",
       textAlign: "left",
+      position: "relative",
     },
   },
   cardTitle: {
     [theme.breakpoints.up("md")]: {
       margin: "2rem",
       marginBottom: 0,
-    }
+    },
   },
   circle: {
     width: "90px",
@@ -87,8 +104,8 @@ const styles = (theme) => ({
     [theme.breakpoints.up("md")]: {
       textAlign: "left",
       padding: "2rem",
-      paddingTop: "1rem"
-    }
+      paddingTop: "1rem",
+    },
   },
 });
 
@@ -120,27 +137,27 @@ const PromoSection = ({ classes }) => {
         Track how your links are performing across the web with our advanced
         statistics dashboard.
       </Typography>
-      <div className={classes.cardsContainer}>
-      <div className={classes.blueLine}></div>
-        {cards.map((card, id) => (
-          <div key={id}>
-            <div className={classes.card}>
-              <div className={classes.circle}>
-                <img
-                  src={card.icon}
-                  alt={card.title}
-                  className={classes.icon}
-                />
+      <div className={classes.container}>
+        <div className={classes.blueLine}></div>
+        <div className={classes.cardsContainer}>
+          {cards.map((card, id) => (
+              <div key={id} className={classes.card}>
+                <div className={classes.circle}>
+                  <img
+                    src={card.icon}
+                    alt={card.title}
+                    className={classes.icon}
+                  />
+                </div>
+                <Typography variant="h3" className={classes.cardTitle}>
+                  {card.title}
+                </Typography>
+                <Typography variant="body1" className={classes.cardContent}>
+                  {card.text}
+                </Typography>
               </div>
-              <Typography variant="h3" className={classes.cardTitle}>
-                {card.title}
-              </Typography>
-              <Typography variant="body1" className={classes.cardContent}>
-                {card.text}
-              </Typography>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
