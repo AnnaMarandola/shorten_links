@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { withStyles, Button, Typography } from "@material-ui/core";
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const styles = (theme) => ({
   resultsContainer: {
@@ -30,10 +31,14 @@ const styles = (theme) => ({
     color: theme.palette.primary.main,
     fontWeight: 500,
     padding: "1rem",
+    overflow: "hidden",
+    marginRight: "1rem",
     [theme.breakpoints.up("md")]: {
       marginLeft: "1rem",
       padding: 0,
       marginTop: "0.5rem",
+      width: "50%",
+      marginRight: "1rem"
     },
   },
   separator: {
@@ -56,6 +61,9 @@ const styles = (theme) => ({
   shortLink: {
     color: theme.palette.primary.turquoise,
     fontWeight: 500,
+    overflow: "hidden",
+    marginRight: "1rem",
+
     [theme.breakpoints.up("md")]: {
       marginRight: "2rem",
       marginTop: "0.5rem",
@@ -97,18 +105,17 @@ const styles = (theme) => ({
 });
 
 const Results = ({ classes, longUrls, shortenUrls, loading }) => {
-  const [isCopied, setCopied] = useState(false);
+  const [ clipboard, setClipboard] = useState('');
 
-  const handleCopy = () => {
-    setCopied(true);
+  const handleCopy = (url) => {
+    setClipboard(url);
   };
 
   return (
       <div className={classes.resultsContainer}>
-
       {loading && <div>Loading ...</div>}
-
-      { longUrls && longUrls.map((url, id) => (
+      { longUrls &&
+        longUrls.map((url, id) => (
       <div className={classes.result} key={id}>
         <Typography variant="h6" className={classes.longLink}>
           {url}
@@ -120,20 +127,27 @@ const Results = ({ classes, longUrls, shortenUrls, loading }) => {
             {shortenUrls[id]}
           </Typography>
 
-          {isCopied ? (
-            <Button className={classes.copiedButton} onClick={handleCopy}>
+            <CopyToClipboard text={shortenUrls[id]}>
+          {clipboard === shortenUrls[id] ? (
+            <Button 
+            type="submit" 
+            className={classes.copiedButton} 
+            onClick={() => handleCopy(shortenUrls[id])}>
               Copied!
             </Button>
           ) : (
-            <Button className={classes.copyButton} onClick={handleCopy}>
+            <Button 
+            type="submit" 
+            className={classes.copyButton} 
+            onClick={() => handleCopy(shortenUrls[id])}>
               Copy
             </Button>
           )}
+          </CopyToClipboard>
         </div>
       </div>
+
       ))}
-
-
 
     </div>
   );

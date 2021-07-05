@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { withStyles, Button, Typography } from "@material-ui/core";
+import { withStyles, Button } from "@material-ui/core";
 import BGDESKTOP from "../assets/bg-shorten-desktop.svg";
 import BGMOBILE from "../assets/bg-shorten-mobile.svg";
 import Results from "./Results";
@@ -105,7 +105,6 @@ const SearchBar = ({ classes }) => {
       })
       .catch((err) => {
         console.log(err);
-        alert("you must enter a valid url");
         setLoading(false);
       });
   };
