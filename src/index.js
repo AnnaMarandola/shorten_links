@@ -51,13 +51,13 @@ typography: {
   },
   body1: {
     color: "#9E9AA8",
-    fontSize: "15px",
+    fontSize: "18px",
     fontWeight: 500,
     lineHeight: "26px", 
   },
   body2: {
     color: "#9E9AA8",
-    fontSize: "15px",
+    fontSize: "18px",
     fontWeight: 700,
     lineHeight: "26px", 
   },
@@ -82,8 +82,7 @@ palette: {
   secondary: {
     main: "#34313D",
     whiteish: "#EFF1F7",
-    clearBlue: "#9AE3E3",
-    
+    clearBlue: "#9AE3E3",    
   }
 },
 

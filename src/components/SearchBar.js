@@ -1,6 +1,9 @@
-import { withStyles, TextField, Button } from "@material-ui/core";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { withStyles, Button, Typography } from "@material-ui/core";
 import BGDESKTOP from "../assets/bg-shorten-desktop.svg";
 import BGMOBILE from "../assets/bg-shorten-mobile.svg";
+import Results from "./Results";
 
 const styles = (theme) => ({
   root: {
@@ -36,12 +39,14 @@ const styles = (theme) => ({
     borderRadius: "10px",
     marginBottom: "1rem",
     width: "100%",
+    height: "3.5rem",
+    paddingLeft: "1rem",
+    fontSize: "1rem",
     [theme.breakpoints.up("md")]: {
       width: "80%",
       marginBottom: 0,
       marginRight: "1rem",
       margin: "0.5rem",
-
     },
   },
   shortenBtn: {
@@ -64,25 +69,76 @@ const styles = (theme) => ({
       minWidth: "10rem",
       marginLeft: "1rem",
       margin: "0.5rem",
-
     },
   },
 });
 
 const SearchBar = ({ classes }) => {
+  const [urlToConvert, setUrlToConvert] = useState("");
+  const [shortenUrls, setShortenUrls] = useState([]);
+  const [longUrls, setLongUrls] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [valid, setValid] = useState(true);
+
+  console.log("urlToConvert", urlToConvert);
+  console.log("shortenUrls", shortenUrls);
+  console.log("longUrls", longUrls);
+  console.log("loading", loading);
+  console.log("valid", valid);
+
+  const handleChange = (e) => {
+    setUrlToConvert(e.target.value);
+  };
+
+  const getShortenUrl = () => {
+    axios
+      .get(
+        `https://api.shrtco.de/v2/shorten?url=${urlToConvert}/very/long/link.html`,
+        {
+          responseType: "json",
+        }
+      )
+      .then((res) => {
+        setLongUrls([...longUrls, res.data.result.original_link]);
+        setShortenUrls([...shortenUrls, res.data.result.full_short_link]);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("you must enter a valid url");
+        setLoading(false);
+      });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!urlToConvert) {
+      setValid(false);
+      return null;
+    }
+    getShortenUrl();
+    setUrlToConvert("");
+    setLoading(true);
+  };
+
   return (
     <div className={classes.root}>
       <div className={classes.form}>
-        <form>
-          <TextField
-            variant="outlined"
-            label="Shorten a link here..."
+        <form onSubmit={handleSubmit}>
+          <input
+            id="url"
+            placeholder="Shorten a link here..."
             className={classes.input}
-            color="secondary"
+            type="url"
+            value={urlToConvert}
+            onChange={handleChange}
           />
-          <Button className={classes.shortenBtn}>Shorten it!</Button>
+          <Button type="submit" className={classes.shortenBtn}>
+            Shorten it!
+          </Button>
         </form>
       </div>
+      <Results shortenUrls={shortenUrls} longUrls={longUrls} loading={loading}/>
     </div>
   );
 };
