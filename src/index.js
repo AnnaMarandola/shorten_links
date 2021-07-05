@@ -7,7 +7,9 @@ import {
   createMuiTheme,
 } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import "@fontsource/poppins"; 
+import "@fontsource/poppins";
+import "./index.css";
+
 
 let theme =createMuiTheme({
 typography: {
