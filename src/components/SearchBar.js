@@ -81,12 +81,6 @@ const SearchBar = ({ classes }) => {
   const [loading, setLoading] = useState(false);
   const [valid, setValid] = useState(true);
 
-  console.log("urlToConvert", urlToConvert);
-  console.log("shortenUrls", shortenUrls);
-  console.log("longUrls", longUrls);
-  console.log("loading", loading);
-  console.log("valid", valid);
-
   const handleChange = (e) => {
     setUrlToConvert(e.target.value);
   };
