@@ -39,6 +39,7 @@ const styles = (theme) => ({
     [theme.breakpoints.up("md")]: {
       display: "flex",
       width: "75%",
+      minWidth: "30rem",
       justifyContent: "space-around",
     },
   },
@@ -71,6 +72,7 @@ const styles = (theme) => ({
       width: "40%",
       textAlign: "right",
       margin: 0,
+      minWidth: "15rem"
     },
   },
   avatarContainer: {
@@ -80,9 +82,15 @@ const styles = (theme) => ({
   },
   contactIcon: {
     margin: "1rem",
+    width: "10%",
+    padding: "0.2rem",
     [theme.breakpoints.up("md")]: {
       margin: "0 1rem 1rem 1rem",
     },
+    "&:hover": {
+      backgroundColor: theme.palette.primary.turquoise,
+      borderRadius: "30px",
+    }
   },
 });
 

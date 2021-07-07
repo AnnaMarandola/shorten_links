@@ -6,6 +6,7 @@ import CUSTOM from "../assets/icon-fully-customizable.svg";
 const styles = (theme) => ({
   root: {
     backgroundColor: theme.palette.secondary.whiteish,
+    paddingBottom: "2rem"
   },
   title: {
     textAlign: "center",
@@ -30,7 +31,7 @@ const styles = (theme) => ({
   },
   blueLine: {
     backgroundColor: theme.palette.primary.turquoise,
-    width: "5px",
+    width: "7px",
     height: "40rem",
     position: "relative",
     bottom: "-10rem",
@@ -39,7 +40,7 @@ const styles = (theme) => ({
     [theme.breakpoints.up("md")]: {
       width: "60%",
       marginLeft: "20%",
-      height: "8px",
+      height: "9px",
       position: "relative",
       bottom: "-10rem",
       left: 0,
@@ -68,7 +69,7 @@ const styles = (theme) => ({
   card: {
     width: "90%",
     height: "fit-content",
-    marginLeft: "5%",
+    marginLeft: "5.3%",
     marginBottom: "6rem",
     textAlign: "center",
     backgroundColor: "white",

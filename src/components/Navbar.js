@@ -73,9 +73,9 @@ function Nav({ classes }) {
     <div className={classes.root}>
       <div className={classes.navLinksContainer}>
         <img src={LOGO} alt="logo" className={classes.logo} />
-        <Link className={classes.navLink}>Features</Link>
-        <Link className={classes.navLink}>Pricing</Link>
-        <Link className={classes.navLink}>Ressources</Link>
+        <Link className={classes.navLink} href="/" >Features</Link>
+        <Link className={classes.navLink} href="/" >Pricing</Link>
+        <Link className={classes.navLink} href="/" >Ressources</Link>
       </div>
       <div className={classes.authButtons}>
         <Link className={classes.navLink}>Login</Link>

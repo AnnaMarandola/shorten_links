@@ -13,7 +13,7 @@ const styles = (theme) => ({
     [theme.breakpoints.up("md")]: {
       flexDirection: "row",
       paddingTop: "2rem",
-      paddingBottom: "8rem"
+      paddingBottom: "12rem"
     },
   },
   textContainer: {
@@ -34,7 +34,7 @@ const styles = (theme) => ({
   subtitle: {
     marginBottom: "2rem",
     [theme.breakpoints.up("md")]: {
-        width: "65%"
+        width: "70%"
     },
   },
   imageContainer: {
@@ -47,14 +47,15 @@ const styles = (theme) => ({
     overflowRight: "hidden",
     marginBottom: "2rem",
     [theme.breakpoints.up("sm")]: {
-      width: "110%",
-      marginLeft: "7rem",
+      width: "140%",
+      marginLeft: "0rem",
     },
   },
   getStartedBtn: {
     width: "60%",
     [theme.breakpoints.up("sm")]: {
-        width: "10rem"
+        width: "10rem",
+        padding: "1rem 0"
       },
   },
 });

@@ -18,15 +18,16 @@ const styles = (theme) => ({
     justifyContent: "space-evenly",
     [theme.breakpoints.up("md")]: {
       backgroundImage: `url(${BOOSTDESKTOP})`,
-      backgroundPosition: "center 20%",
-      height: "15rem",
+      backgroundPosition: "center 5%",
+      height: "18rem",
     },
   },
   title: {
     color: "white",
     marginTop: "6rem",
     [theme.breakpoints.up("md")]: {
-      marginBottom: "1rem",
+      marginBottom: "2rem",
+      marginTop: "6rem",
     },
   },
   getStartedBtn: {
@@ -34,6 +35,7 @@ const styles = (theme) => ({
     marginBottom: "6rem",
     [theme.breakpoints.up("md")]: {
       marginBottom: "rem",
+      padding: "1rem 0"
     },
 
   },

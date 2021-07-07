@@ -17,7 +17,7 @@ typography: {
   fontFamily: "Poppins",
   h1: {
     color: "#34313D",
-    fontSize: "80px",
+    fontSize: "90px",
     fontWeight: 700,
     lineHeight: "90px",
     '@media (max-width:600px)': {
@@ -27,7 +27,7 @@ typography: {
   },
   h2: {
     color: "#34313D",
-    fontSize: "40px",
+    fontSize: "50px",
     fontWeight: 700,
     lineHeight: "48px",
     '@media (max-width:600px)': {
@@ -44,7 +44,7 @@ typography: {
   h5: {
     color: "#9E9AA8",
     fontSize: "22px",
-    fontWeight: 700,
+    fontWeight: 500,
     lineHeight: "36px",
     '@media (max-width:600px)': {
       fontSize: "18px",

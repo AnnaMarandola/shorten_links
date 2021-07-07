@@ -23,15 +23,15 @@ const styles = (theme) => ({
     position: "relative",
     top: "-90px",
     [theme.breakpoints.up("md")]: {
-      padding: "2.5rem",
+      padding: "4rem",
       textAlign: "center",
       flexDirection: "column",
       width: "70%",
       marginLeft: "15%",
       backgroundImage: `url(${BGDESKTOP})`,
-      backgroundPosition: "center 20% ",
+      backgroundPosition: "center 30% ",
       position: "relative",
-      top: "-75px",
+      top: "-100px",
     },
   },
   input: {
@@ -43,6 +43,7 @@ const styles = (theme) => ({
     paddingLeft: "1rem",
     fontSize: "1rem",
     [theme.breakpoints.up("md")]: {
+      height: "4rem",
       width: "80%",
       marginBottom: 0,
       marginRight: "1rem",
@@ -50,7 +51,7 @@ const styles = (theme) => ({
     },
   },
   shortenBtn: {
-    padding: "0.9em 2em",
+    padding: "1.2em 2em",
     width: "100%",
     borderRadius: "10px",
     fontSize: "1rem",
