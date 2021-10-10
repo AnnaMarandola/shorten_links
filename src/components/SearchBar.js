@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { withStyles, Button } from "@material-ui/core";
 import BGDESKTOP from "../assets/bg-shorten-desktop.svg";
@@ -81,6 +81,11 @@ const SearchBar = ({ classes }) => {
   const [loading, setLoading] = useState(false);
   const [valid, setValid] = useState(true);
 
+
+  useEffect(() => {
+    console.log(shortenUrls)
+  }, [shortenUrls, setShortenUrls])
+
   const handleChange = (e) => {
     setUrlToConvert(e.target.value);
   };
@@ -90,7 +95,7 @@ const SearchBar = ({ classes }) => {
       .get(
         `https://api.shrtco.de/v2/shorten?url=${urlToConvert}/very/long/link.html`,
         {
-          responseType: "json",
+          method: "json",
         }
       )
       .then((res) => {
